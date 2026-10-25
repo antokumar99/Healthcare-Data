@@ -1,0 +1,75 @@
+19:51:59 | INFO    | generate | wrote patients        2100 rows -> /home/claude/healthcare-migration/data/raw/patients.csv
+19:51:59 | INFO    | generate | wrote appointments    6243 rows -> /home/claude/healthcare-migration/data/raw/appointments.csv
+19:51:59 | INFO    | generate | wrote billing         4512 rows -> /home/claude/healthcare-migration/data/raw/billing.csv
+19:51:59 | INFO    | load_source | MySQL source: loaded patients        2100 rows
+19:52:00 | INFO    | load_source | MySQL source: loaded appointments    6243 rows
+19:52:01 | INFO    | load_source | MySQL source: loaded billing         4512 rows
+19:52:01 | INFO    | migrate | === migration run 12a75ed5-6ef8-4836-b7a5-922d9fe64663 ===
+19:52:01 | INFO    | extract | extracted patients        2100 rows
+19:52:01 | INFO    | extract | extracted appointments    6243 rows
+19:52:01 | INFO    | extract | extracted billing         4512 rows
+19:52:01 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:01 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:01 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:01 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:01 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:01 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:02 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:02 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:02 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:02 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:02 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:02 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:02 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:02 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:02 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:02 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:02 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:02 | INFO    | migrate | migration finished in 1.4s
+
+| table        |   source |   loaded |   dupes merged |   rejected |   load failures |
+|--------------|----------|----------|----------------|------------|-----------------|
+| patients     |     2100 |     1965 |             99 |         36 |               0 |
+| appointments |     6243 |     5878 |            177 |        188 |               0 |
+| billing      |     4512 |     4275 |             85 |        152 |               0 |
+
+run_id=12a75ed5-6ef8-4836-b7a5-922d9fe64663  elapsed=1.35s
+19:52:02 | INFO    | validate | PASS    01             reconcile_row_conservation
+19:52:02 | INFO    | validate | PASS    01             reconcile_loader_handoff
+19:52:02 | INFO    | validate | PASS    01             reconcile_target_row_counts
+19:52:02 | INFO    | validate | PASS    01             reconcile_error_log_vs_audit
+19:52:02 | INFO    | validate | PASS    01             reconcile_primary_key_checksum
+19:52:02 | INFO    | validate | PASS    01             reconcile_billing_control_total
+19:52:02 | INFO    | validate | PASS    01             reconcile_no_id_both_loaded_and_quarantined
+19:52:02 | INFO    | validate | PASS    02             appointments_without_patient
+19:52:02 | INFO    | validate | PASS    02             billing_without_appointment
+19:52:02 | INFO    | validate | PASS    02             billing_without_patient
+19:52:02 | INFO    | validate | PASS    02             billing_patient_differs_from_appointment_patient
+19:52:02 | INFO    | validate | PASS    02             merged_patient_ids_still_present
+19:52:02 | INFO    | validate | PASS    02             merge_survivor_exists
+19:52:02 | INFO    | validate | PASS    03             patients_dob_in_future_or_too_old
+19:52:02 | INFO    | validate | PASS    03             patients_mrn_not_normalised
+19:52:02 | INFO    | validate | PASS    03             patients_duplicate_mrn_after_normalisation
+19:52:02 | INFO    | validate | PASS    03             patients_bad_phone_format
+19:52:02 | INFO    | validate | PASS    03             patients_bad_email_format
+19:52:02 | INFO    | validate | PASS    03             patients_bad_state_or_postal
+19:52:02 | INFO    | validate | PASS    03             patients_untrimmed_names
+19:52:02 | INFO    | validate | PASS    03             appointments_duplicate_slot
+19:52:02 | INFO    | validate | PASS    03             appointments_completed_in_future
+19:52:02 | INFO    | validate | PASS    03             appointments_bad_provider_format
+19:52:02 | INFO    | validate | PASS    03             billing_math_does_not_balance
+19:52:02 | INFO    | validate | PASS    03             billing_bad_invoice_number
+19:52:02 | INFO    | validate | PASS    03             billing_dated_before_appointment
+19:52:02 | INFO    | validate | PASS    03             billing_duplicate_invoice_numbers
+19:52:02 | INFO    | validate | PASS    04             load_failures_detected
+19:52:02 | INFO    | validate | PASS    04             audit_rows_missing
+19:52:02 | INFO    | validate | PASS    04             sequences_out_of_sync
+19:52:02 | INFO    | validate | PASS    04             unparseable_values_leaked_through
+19:52:02 | INFO    | validate | PASS    04             merge_targets_missing
+19:52:02 | INFO    | validate | PASS    cross          mysql_source_count_equals_audit_source_rows
+19:52:02 | INFO    | validate | PASS    cross          billing_money_is_conserved
+19:52:02 | INFO    | validate | PASS    cross          no_mrn_invented_in_target
+19:52:02 | INFO    | validate | PASS    cross          no_mrn_silently_lost
+19:52:02 | INFO    | validate | PASS    cross          target_patients_not_more_than_distinct_source_mrns
+19:52:02 | INFO    | validate | validation: 37 pass, 0 fail, 0 error -> OK
+19:52:02 | INFO    | pipeline | full report: /home/claude/healthcare-migration/reports/validation_report.md

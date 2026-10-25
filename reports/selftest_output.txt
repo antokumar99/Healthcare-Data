@@ -1,0 +1,265 @@
+19:52:03 | INFO    | migrate | === migration run f43ec2a3-34de-4b34-8b6f-e2eb150f4777 ===
+19:52:03 | INFO    | extract | extracted patients        2100 rows
+19:52:03 | INFO    | extract | extracted appointments    6243 rows
+19:52:03 | INFO    | extract | extracted billing         4512 rows
+19:52:03 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:03 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:03 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:03 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:04 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:04 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:04 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:04 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:04 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:04 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:04 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:04 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:04 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:04 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:04 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:04 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:04 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:04 | INFO    | migrate | migration finished in 1.3s
+19:52:04 | INFO    | selftest | fault delete one invoice                                   -> detected
+19:52:04 | INFO    | migrate | === migration run 0bebfb89-933f-4d6a-b938-c8ee2437d1c3 ===
+19:52:04 | INFO    | extract | extracted patients        2100 rows
+19:52:05 | INFO    | extract | extracted appointments    6243 rows
+19:52:05 | INFO    | extract | extracted billing         4512 rows
+19:52:05 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:05 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:05 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:05 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:05 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:05 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:05 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:05 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:05 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:05 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:05 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:05 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:06 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:06 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:06 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:06 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:06 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:06 | INFO    | migrate | migration finished in 1.2s
+19:52:06 | INFO    | selftest | fault silently inflate one invoice (+$10, still balances)  -> detected
+19:52:06 | INFO    | migrate | === migration run 5aa96b5f-a27a-42de-ad2e-94f87f3cf9d6 ===
+19:52:06 | INFO    | extract | extracted patients        2100 rows
+19:52:06 | INFO    | extract | extracted appointments    6243 rows
+19:52:06 | INFO    | extract | extracted billing         4512 rows
+19:52:07 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:07 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:07 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:07 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:07 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:07 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:07 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:07 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:07 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:07 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:07 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:07 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:07 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:07 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:07 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:07 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:07 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:07 | INFO    | migrate | migration finished in 1.3s
+19:52:08 | INFO    | selftest | fault insert orphan appointment (FKs bypassed)             -> detected
+19:52:08 | INFO    | migrate | === migration run 21b7a7e8-e230-4188-b435-c1e97e182466 ===
+19:52:08 | INFO    | extract | extracted patients        2100 rows
+19:52:08 | INFO    | extract | extracted appointments    6243 rows
+19:52:08 | INFO    | extract | extracted billing         4512 rows
+19:52:08 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:08 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:08 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:09 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:09 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:09 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:09 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:09 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:09 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:09 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:09 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:09 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:09 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:09 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:09 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:09 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:09 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:09 | INFO    | migrate | migration finished in 1.4s
+19:52:09 | INFO    | selftest | fault corrupt a phone number                               -> detected
+19:52:09 | INFO    | migrate | === migration run 4568dccd-801d-41f6-9e99-60e5032cb89a ===
+19:52:10 | INFO    | extract | extracted patients        2100 rows
+19:52:10 | INFO    | extract | extracted appointments    6243 rows
+19:52:10 | INFO    | extract | extracted billing         4512 rows
+19:52:10 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:10 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:10 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:10 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:10 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:10 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:10 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:10 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:10 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:10 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:10 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:10 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:11 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:11 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:11 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:11 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:11 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:11 | INFO    | migrate | migration finished in 1.2s
+19:52:11 | INFO    | selftest | fault un-normalise an MRN                                  -> detected
+19:52:11 | INFO    | migrate | === migration run f90e52dc-dd93-46c3-8e3b-7dbd5855f054 ===
+19:52:11 | INFO    | extract | extracted patients        2100 rows
+19:52:11 | INFO    | extract | extracted appointments    6243 rows
+19:52:11 | INFO    | extract | extracted billing         4512 rows
+19:52:12 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:12 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:12 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:12 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:12 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:12 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:12 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:12 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:12 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:12 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:12 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:12 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:12 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:12 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:12 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:12 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:12 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:12 | INFO    | migrate | migration finished in 1.3s
+19:52:13 | INFO    | selftest | fault inject a LOAD_FAILURE into the error log             -> detected
+19:52:13 | INFO    | migrate | === migration run 915719a7-4c56-4b46-909e-0f566c7d9fba ===
+19:52:13 | INFO    | extract | extracted patients        2100 rows
+19:52:13 | INFO    | extract | extracted appointments    6243 rows
+19:52:13 | INFO    | extract | extracted billing         4512 rows
+19:52:13 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:13 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:13 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:13 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:13 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:13 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:14 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:14 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:14 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:14 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:14 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:14 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:14 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:14 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:14 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:14 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:14 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:14 | INFO    | migrate | migration finished in 1.3s
+19:52:14 | INFO    | selftest | fault rewind an identity sequence                          -> detected
+19:52:14 | INFO    | migrate | === migration run dceb44c3-eb8d-4752-a034-c0733fb31784 ===
+19:52:14 | INFO    | extract | extracted patients        2100 rows
+19:52:14 | INFO    | extract | extracted appointments    6243 rows
+19:52:15 | INFO    | extract | extracted billing         4512 rows
+19:52:15 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:15 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:15 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:15 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:15 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:15 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:15 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:15 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:15 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:15 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:15 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:15 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:15 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:15 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:16 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:16 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:16 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:16 | INFO    | migrate | migration finished in 1.3s
+19:52:16 | INFO    | selftest | fault mark a future appointment COMPLETED                  -> detected
+19:52:16 | INFO    | migrate | === migration run e76d91c5-5bcf-440d-81d6-7c0da80c4ff7 ===
+19:52:16 | INFO    | extract | extracted patients        2100 rows
+19:52:16 | INFO    | extract | extracted appointments    6243 rows
+19:52:16 | INFO    | extract | extracted billing         4512 rows
+19:52:17 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:17 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:17 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:17 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:17 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:17 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:17 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:17 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:17 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:17 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:17 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:17 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:17 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:17 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:17 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:17 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:17 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:17 | INFO    | migrate | migration finished in 1.4s
+19:52:18 | INFO    | selftest | fault delete a rejected INVOICE from quarantine (money vanishes) -> detected
+19:52:18 | INFO    | migrate | === migration run b40e3f59-f5a7-479c-8aa1-8aeb88318fe5 ===
+19:52:18 | INFO    | extract | extracted patients        2100 rows
+19:52:18 | INFO    | extract | extracted appointments    6243 rows
+19:52:18 | INFO    | extract | extracted billing         4512 rows
+19:52:18 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:18 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:18 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:18 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:19 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:19 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:19 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:19 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:19 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:19 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:19 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:19 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:19 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:19 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:19 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:19 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:19 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:19 | INFO    | migrate | migration finished in 1.4s
+19:52:20 | INFO    | selftest | fault delete a rejected PATIENT from quarantine (patient vanishes) -> detected
+19:52:20 | INFO    | migrate | === migration run 9627c7ba-3926-4275-b4b5-f20770bd5700 ===
+19:52:20 | INFO    | extract | extracted patients        2100 rows
+19:52:20 | INFO    | extract | extracted appointments    6243 rows
+19:52:20 | INFO    | extract | extracted billing         4512 rows
+19:52:20 | INFO    | cleaning | cleaned patients      source= 2100 clean= 1965 merged=  99 rejected=  36
+19:52:20 | INFO    | cleaning | cleaned appointments  source= 6243 clean= 5878 merged= 177 rejected= 188
+19:52:20 | INFO    | cleaning | cleaned billing       source= 4512 clean= 4275 merged=  85 rejected= 152
+19:52:20 | INFO    | migrate | target schema 'healthcare' (re)created
+19:52:20 | INFO    | migrate | patients      batch    0-1000 committed (1000/1965 loaded)
+19:52:20 | INFO    | migrate | patients      batch 1000-1965 committed (1965/1965 loaded)
+19:52:20 | INFO    | migrate | appointments  batch    0-1000 committed (1000/5878 loaded)
+19:52:20 | INFO    | migrate | appointments  batch 1000-2000 committed (2000/5878 loaded)
+19:52:21 | INFO    | migrate | appointments  batch 2000-3000 committed (3000/5878 loaded)
+19:52:21 | INFO    | migrate | appointments  batch 3000-4000 committed (4000/5878 loaded)
+19:52:21 | INFO    | migrate | appointments  batch 4000-5000 committed (5000/5878 loaded)
+19:52:21 | INFO    | migrate | appointments  batch 5000-5878 committed (5878/5878 loaded)
+19:52:21 | INFO    | migrate | billing       batch    0-1000 committed (1000/4275 loaded)
+19:52:21 | INFO    | migrate | billing       batch 1000-2000 committed (2000/4275 loaded)
+19:52:21 | INFO    | migrate | billing       batch 2000-3000 committed (3000/4275 loaded)
+19:52:21 | INFO    | migrate | billing       batch 3000-4000 committed (4000/4275 loaded)
+19:52:21 | INFO    | migrate | billing       batch 4000-4275 committed (4275/4275 loaded)
+19:52:21 | INFO    | migrate | migration finished in 1.3s
+
+| injected fault                                               | checks that fired                                                                                                        | result   | notes   |
+|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| delete one invoice                                           | billing_money_is_conserved, reconcile_billing_control_total, reconcile_primary_key_checksum, reconcile_target_row_counts | DETECTED |         |
+| silently inflate one invoice (+$10, still balances)          | billing_money_is_conserved, reconcile_billing_control_total                                                              | DETECTED |         |
+| insert orphan appointment (FKs bypassed)                     | appointments_without_patient, reconcile_primary_key_checksum, reconcile_target_row_counts                                | DETECTED |         |
+| corrupt a phone number                                       | patients_bad_phone_format                                                                                                | DETECTED |         |
+| un-normalise an MRN                                          | no_mrn_invented_in_target, patients_mrn_not_normalised                                                                   | DETECTED |         |
+| inject a LOAD_FAILURE into the error log                     | load_failures_detected, reconcile_error_log_vs_audit                                                                     | DETECTED |         |
+| rewind an identity sequence                                  | sequences_out_of_sync                                                                                                    | DETECTED |         |
+| mark a future appointment COMPLETED                          | appointments_completed_in_future                                                                                         | DETECTED |         |
+| delete a rejected INVOICE from quarantine (money vanishes)   | billing_money_is_conserved, reconcile_error_log_vs_audit                                                                 | DETECTED |         |
+| delete a rejected PATIENT from quarantine (patient vanishes) | no_mrn_silently_lost, reconcile_error_log_vs_audit                                                                       | DETECTED |         |

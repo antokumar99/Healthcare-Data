@@ -1,0 +1,450 @@
+[
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_row_conservation",
+    "status": "PASS",
+    "rows": 0,
+    "description": "source rows must be fully accounted for (loaded + merged + rejected + failed)",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_loader_handoff",
+    "status": "PASS",
+    "rows": 0,
+    "description": "rows handed to the loader must equal rows loaded + rows PostgreSQL refused",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_target_row_counts",
+    "status": "PASS",
+    "rows": 0,
+    "description": "actual COUNT(*) in each target table must equal the audit's loaded_rows",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_error_log_vs_audit",
+    "status": "PASS",
+    "rows": 0,
+    "description": "quarantine table counts must match the audit counters",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_primary_key_checksum",
+    "status": "PASS",
+    "rows": 0,
+    "description": "md5 of the sorted primary keys in the target must equal the checksum computed before loading",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_billing_control_total",
+    "status": "PASS",
+    "rows": 0,
+    "description": "SUM(total_amount) in the target must equal the control total captured before loading",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconcile_no_id_both_loaded_and_quarantined",
+    "status": "PASS",
+    "rows": 0,
+    "description": "a source id may be loaded OR quarantined, never both",
+    "detail": ""
+  },
+  {
+    "suite": "01_reconciliation.sql",
+    "check": "reconciliation_summary",
+    "status": "INFO",
+    "rows": 3,
+    "description": "one-line-per-table migration scorecard",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "appointments_without_patient",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every appointment must reference an existing patient",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "billing_without_appointment",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every invoice must reference an existing appointment",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "billing_without_patient",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every invoice must reference an existing patient",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "billing_patient_differs_from_appointment_patient",
+    "status": "PASS",
+    "rows": 0,
+    "description": "invoice.patient_id must equal the patient of the appointment it bills",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "merged_patient_ids_still_present",
+    "status": "PASS",
+    "rows": 0,
+    "description": "patient ids that were merged away as duplicates must not exist in the target",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "merge_survivor_exists",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every \"merged into <table>_id=N\" message must point at a row that exists in the target",
+    "detail": ""
+  },
+  {
+    "suite": "02_referential_integrity.sql",
+    "check": "patients_with_no_activity",
+    "status": "INFO",
+    "rows": 1,
+    "description": "patients with neither appointments nor invoices (informational; normal for new registrations)",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_dob_in_future_or_too_old",
+    "status": "PASS",
+    "rows": 0,
+    "description": "date of birth must be plausible",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_mrn_not_normalised",
+    "status": "PASS",
+    "rows": 0,
+    "description": "MRN must be trimmed and upper-case",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_duplicate_mrn_after_normalisation",
+    "status": "PASS",
+    "rows": 0,
+    "description": "no two patients may share an MRN once case/whitespace are ignored",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_bad_phone_format",
+    "status": "PASS",
+    "rows": 0,
+    "description": "phone must be NNN-NNN-NNNN or NULL",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_bad_email_format",
+    "status": "PASS",
+    "rows": 0,
+    "description": "email must look like an address and be lower-case, or be NULL",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_bad_state_or_postal",
+    "status": "PASS",
+    "rows": 0,
+    "description": "state_code = 2 upper-case letters; postal_code = 5 digits (+4 optional)",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "patients_untrimmed_names",
+    "status": "PASS",
+    "rows": 0,
+    "description": "names must have no leading/trailing/double spaces",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "potential_duplicate_patients",
+    "status": "INFO",
+    "rows": 0,
+    "description": "same name + DOB under different MRNs (needs human review, not auto-merged)",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "appointments_duplicate_slot",
+    "status": "PASS",
+    "rows": 0,
+    "description": "same patient + time + provider must be unique",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "appointments_completed_in_future",
+    "status": "PASS",
+    "rows": 0,
+    "description": "a COMPLETED appointment cannot be scheduled in the future",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "appointments_bad_provider_format",
+    "status": "PASS",
+    "rows": 0,
+    "description": "provider must be 'Dr. <Name>' or 'Unassigned'",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_math_does_not_balance",
+    "status": "PASS",
+    "rows": 0,
+    "description": "total = insurance_paid + patient_responsibility on every invoice",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_bad_invoice_number",
+    "status": "PASS",
+    "rows": 0,
+    "description": "invoice numbers must be INV-<digits>, upper-case, trimmed",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_dated_before_appointment",
+    "status": "PASS",
+    "rows": 0,
+    "description": "an invoice cannot be dated before the visit it bills",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_duplicate_invoice_numbers",
+    "status": "PASS",
+    "rows": 0,
+    "description": "invoice numbers must be unique",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_on_cancelled_appointments",
+    "status": "INFO",
+    "rows": 1,
+    "description": "invoices attached to CANCELLED appointments (business review item)",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "completeness_profile_patients",
+    "status": "INFO",
+    "rows": 1,
+    "description": "how complete are optional patient attributes after cleaning?",
+    "detail": ""
+  },
+  {
+    "suite": "03_data_integrity.sql",
+    "check": "billing_revenue_by_status",
+    "status": "INFO",
+    "rows": 6,
+    "description": "sanity view of loaded revenue by payment status",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "load_failures_detected",
+    "status": "PASS",
+    "rows": 0,
+    "description": "rows PostgreSQL itself refused during the load (should be none: the cleaner must catch them first)",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "audit_rows_missing",
+    "status": "PASS",
+    "rows": 0,
+    "description": "each of the 3 tables must have exactly one audit row for the run",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "sequences_out_of_sync",
+    "status": "PASS",
+    "rows": 0,
+    "description": "identity sequences must be >= MAX(id), otherwise the next INSERT collides",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "unparseable_values_leaked_through",
+    "status": "PASS",
+    "rows": 0,
+    "description": "quarantined rows without a payload cannot be investigated or replayed",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "merge_targets_missing",
+    "status": "PASS",
+    "rows": 0,
+    "description": "merged duplicates whose message does not name a survivor (cannot be traced)",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "error_summary_by_type",
+    "status": "INFO",
+    "rows": 9,
+    "description": "what was rejected / merged, and why",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "cascade_rejections",
+    "status": "INFO",
+    "rows": 2,
+    "description": "appointments/invoices rejected only because their PARENT was rejected (fix the parent to recover them)",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "quarantined_money_at_risk",
+    "status": "INFO",
+    "rows": 1,
+    "description": "billed amount sitting in quarantine (rejected invoices) - finance should review",
+    "detail": ""
+  },
+  {
+    "suite": "04_migration_errors.sql",
+    "check": "rejected_sample",
+    "status": "INFO",
+    "rows": 10,
+    "description": "first 10 rejected rows with their raw payload, for triage",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_row_counts",
+    "status": "INFO",
+    "rows": 3,
+    "description": "control totals on the source",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_duplicate_mrns",
+    "status": "INFO",
+    "rows": 15,
+    "description": "patients sharing an MRN (case/space-insensitive)",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_orphan_appointments",
+    "status": "INFO",
+    "rows": 1,
+    "description": "appointments whose patient_id does not exist (no FK in legacy schema)",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_orphan_billing",
+    "status": "INFO",
+    "rows": 1,
+    "description": "invoices whose appointment_id does not exist",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_billing_math_errors",
+    "status": "INFO",
+    "rows": 1,
+    "description": "invoices where total <> insurance_paid + patient_responsibility, or amounts missing/negative",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_null_profile_patients",
+    "status": "INFO",
+    "rows": 1,
+    "description": "missing values per patient column",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_gender_inventory",
+    "status": "INFO",
+    "rows": 8,
+    "description": "every spelling of gender in use",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_appointment_status_inventory",
+    "status": "INFO",
+    "rows": 16,
+    "description": "every spelling of appointment status in use",
+    "detail": ""
+  },
+  {
+    "suite": "05_source_mysql_profile.sql",
+    "check": "source_dob_format_inventory",
+    "status": "INFO",
+    "rows": 5,
+    "description": "date-of-birth format patterns in the free-text column",
+    "detail": ""
+  },
+  {
+    "suite": "cross_db",
+    "check": "mysql_source_count_equals_audit_source_rows",
+    "status": "PASS",
+    "rows": 0,
+    "description": "rows extracted must equal rows currently in the MySQL source",
+    "detail": ""
+  },
+  {
+    "suite": "cross_db",
+    "check": "billing_money_is_conserved",
+    "status": "PASS",
+    "rows": 0,
+    "description": "MySQL SUM(total_amount) = PostgreSQL SUM(total_amount) + amount held in quarantine (rejected/merged/failed)",
+    "detail": "source=612440.45 loaded=583339.84 quarantined=29100.61"
+  },
+  {
+    "suite": "cross_db",
+    "check": "no_mrn_invented_in_target",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every target MRN must exist in the source",
+    "detail": ""
+  },
+  {
+    "suite": "cross_db",
+    "check": "no_mrn_silently_lost",
+    "status": "PASS",
+    "rows": 0,
+    "description": "every source MRN is either in the target or quarantined",
+    "detail": ""
+  },
+  {
+    "suite": "cross_db",
+    "check": "target_patients_not_more_than_distinct_source_mrns",
+    "status": "PASS",
+    "rows": 0,
+    "description": "after de-duplication patients <= distinct source MRNs",
+    "detail": "target=1965 distinct_source_mrn=1993"
+  }
+]
